@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Crimson Text", serif;
+  --font-display: "Cinzel", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  /* Ancient Scroll Palette */
+  --color-as-bg: #0b0a08;       /* Almost black background */
+  --color-as-card: #141210;     /* Dark card background */
+  --color-as-border: #3d342b;   /* Dark brown border */
+  --color-as-gold: #e6c68b;     /* Text gold */
+  --color-as-gold-bright: #ffdb58; /* Highlight gold */
+  --color-as-accent: #d4af37;   /* Main accent */
+  --color-as-text-muted: #8a8175;
+}
+
+body {
+  background-color: var(--color-as-bg);
+  color: var(--color-as-gold);
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Drop Cap Style */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  padding-top: 0.2rem;
+  color: var(--color-as-gold-bright);
+  font-weight: 700;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-as-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-as-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-tw-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-tw-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tw-gold-dim);
+}
