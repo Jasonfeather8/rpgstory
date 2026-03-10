@@ -2,11 +2,39 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(), 
+      tailwindcss(),
+      VitePWA({
+        registerType: 'autoUpdate',
+        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+        manifest: {
+          name: 'RPG Story: The Ancient Scroll',
+          short_name: 'RPG Story',
+          description: 'Crie lendas imortais e crônicas épicas com Inteligência Artificial.',
+          theme_color: '#0b0a08',
+          background_color: '#0b0a08',
+          display: 'standalone',
+          icons: [
+            {
+              src: 'https://placehold.co/192x192/0b0a08/d4af37.png?text=RPG',
+              sizes: '192x192',
+              type: 'image/png'
+            },
+            {
+              src: 'https://placehold.co/512x512/0b0a08/d4af37.png?text=RPG',
+              sizes: '512x512',
+              type: 'image/png'
+            }
+          ]
+        }
+      })
+    ],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
