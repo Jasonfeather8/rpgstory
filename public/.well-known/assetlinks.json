@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.vercel.rpgstory.twa",
+    "sha256_cert_fingerprints": ["1F:18:E7:FD:C5:20:E9:56:3A:95:7D:95:FA:70:B6:0D:A5:1F:6A:B8:F6:64:B9:56:AD:EF:A4:01:12:08:5F:4E"]
+  }
+}]
